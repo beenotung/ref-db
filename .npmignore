@@ -2,3 +2,9 @@
 /test/
 /examples/
 /data/
+/.cache/
+tsconfig.json
+tslint.json
+.editorconfig
+.prettierrc
+/.idea/
