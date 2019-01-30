@@ -1,22 +1,8 @@
-function skipSymbol(p: PropertyKey) {
-  if (typeof p !== 'symbol') {
-    return false
-  }
-  switch (p) {
-    case Symbol.iterator:
-      return false;
-    case Symbol.for('nodejs.util.inspect.custom'):
-    case Symbol.toStringTag:
-      return true;
-    default:
-      console.log('Symbol:', p);
-      return true;
-  }
-}
-
 /**
  * cannot proxy with Date?
  * */
+import {skipSymbol} from "./proxy";
+
 export function proxyUndefined(target: object) {
   // console.log('wrap:',target);
   if (target === null || target === undefined || typeof target === 'undefined') {

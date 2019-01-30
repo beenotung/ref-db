@@ -31,6 +31,7 @@
     "test": "test"
   },
   "devDependencies": {
+    "@beenotung/gen-index": "^1.0.7",
     "@types/node": "^8.10.39",
     "husky": "^1.3.1",
     "prettier": "^1.16.1",
