@@ -46,3 +46,6 @@ export let undefined = proxyUndefined(function undefined() {
 });
 export let Undefined = undefined;
 
+export function isUndefined(o) {
+  return typeof o === 'undefined' || o === undefined
+}

@@ -1,4 +1,4 @@
-import {skipSymbol} from "./utils/proxy";
+import {skipSymbol} from "./proxy";
 
 export type fieldMapper<T extends object> = (value: T[keyof T], field: keyof T) => T[keyof T];
 
@@ -29,4 +29,3 @@ export function objectProxyMap<T extends object>(object: T, f: fieldMapper<T>): 
     }
   })
 }
-

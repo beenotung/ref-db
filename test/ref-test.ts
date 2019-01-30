@@ -1,5 +1,6 @@
 import {proxyCollections, Record, Ref} from "../src/ref";
-import {inspect} from "util";
+import {inspect, format} from "util";
+import {format_datetime} from "@beenotung/tslib";
 
 interface User extends Record {
   name: string
@@ -21,10 +22,18 @@ let posts = [
 let collections = {users, posts};
 let graph = proxyCollections<User | Post>(collections);
 
-function log(x) {
-  console.log(inspect(x, {depth: 99}))
+function test(s) {
+  process.stdout.write(s);
+  process.stdout.write(' ~~> ');
+  console.log(inspect(eval(s), {depth: 99}));
 }
 
-log({graph});
-log({'post-1': graph.posts['post-1']});
-log({'post-1.author.name': graph.posts['post-1'].author.name});
+global['graph'] = graph;
+
+test('graph');
+test('graph.posts["post-1"]');
+test('graph.posts["post-1"].author.name');
+
+test('graph.users.length');
+test('graph.users.push({id:"user-3",name:"Carol"})');
+test('graph.users.length');

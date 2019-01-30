@@ -12,6 +12,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "postinstall": "rm -rf node_modules/@beenotung/tslib/index.*",
     "test": "npm run rawtest",
     "clean": "rm -rf dist",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -39,5 +40,8 @@
     "tslint": "^5.12.1",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "@beenotung/tslib": "^13.3.2"
   }
 }

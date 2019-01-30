@@ -1,0 +1,4 @@
+interface SymbolConstructor {
+  store: symbol;
+}
+

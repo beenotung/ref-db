@@ -16,3 +16,10 @@ export function skipSymbol(p: PropertyKey) {
       return true;
   }
 }
+
+export function proxy<T extends object>(target: T, handler: ProxyHandler<T>) {
+  if (typeof target === "object" && target !== null) {
+    return new Proxy(target as any, handler)
+  }
+  return target;
+}
