@@ -36,9 +36,6 @@
       "pre-commit": "npm run format"
     }
   },
-  "directories": {
-    "test": "test"
-  },
   "devDependencies": {
     "@beenotung/gen-index": "^1.0.7",
     "@types/node": "^8.10.39",
