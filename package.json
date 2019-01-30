@@ -1,8 +1,15 @@
 {
   "name": "ref-db",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "version": "0.0.0",
+  "description": "auto populated collection backed by cross-platform Storage",
+  "keywords": [
+    "Proxy",
+    "Reflect",
+    "populate",
+    "cross-platform",
+    "Database",
+    "Storage"
+  ],
   "author": {
     "name": "Beeno Tung",
     "email": "aabbcc1241@yahoo.com.hk",
@@ -15,10 +22,11 @@
     "postinstall": "rm -rf node_modules/@beenotung/tslib/index.*",
     "test": "npm run rawtest",
     "clean": "rm -rf dist",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "postformat": "tslint -p . --fix",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run clean && gen-index",
     "build": "tsc",
+    "postbuild": "rm -rf src/index.ts",
     "pretest": "npm run format && npm run build",
     "rawtest": "ts-node test/index.ts",
     "prepublishOnly": "npm run rawtest && npm run build"

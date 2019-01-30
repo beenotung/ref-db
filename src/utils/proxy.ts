@@ -1,9 +1,9 @@
 export function skipSymbol(p: PropertyKey) {
   if (p === 'inspect') {
-    return true
+    return true;
   }
   if (typeof p !== 'symbol') {
-    return false
+    return false;
   }
   switch (p) {
     case Symbol.iterator:
@@ -18,8 +18,8 @@ export function skipSymbol(p: PropertyKey) {
 }
 
 export function proxy<T extends object>(target: T, handler: ProxyHandler<T>) {
-  if (typeof target === "object" && target !== null) {
-    return new Proxy(target as any, handler)
+  if (typeof target === 'object' && target !== null) {
+    return new Proxy(target as any, handler);
   }
   return target;
 }

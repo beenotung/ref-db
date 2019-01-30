@@ -1,13 +1,17 @@
-import {proxyStoreCollections} from "../src/ref-db";
-import {inspect} from "util";
+import { proxyStoreCollections } from '../src/ref-db';
+import { inspect } from 'util';
 
 let collectionNames = ['users', 'posts'];
-let db = proxyStoreCollections('data', Number.MAX_SAFE_INTEGER, collectionNames);
+let db = proxyStoreCollections(
+  'data',
+  Number.MAX_SAFE_INTEGER,
+  collectionNames,
+);
 
 function test(s: string) {
   process.stdout.write(s);
   process.stdout.write(' ~~> ');
-  console.log(inspect(eval(s)), {depth: 99});
+  console.log(inspect(eval(s)), { depth: 99 });
 }
 
 global['db'] = db;

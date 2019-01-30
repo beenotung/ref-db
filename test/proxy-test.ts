@@ -1,4 +1,4 @@
-import {skipSymbol} from "../src/utils/proxy";
+import { skipSymbol } from '../src/utils/proxy';
 
 let xs = new Proxy([], {
   get(target: any[], p: PropertyKey, receiver: any): any {
@@ -10,17 +10,17 @@ let xs = new Proxy([], {
       case 'length':
         return Reflect.get(target, p, receiver);
     }
-    console.log('get', {target, p, 'typeof p': typeof p});
-    return Reflect.get(target, p, receiver)
+    console.log('get', { target, p, 'typeof p': typeof p });
+    return Reflect.get(target, p, receiver);
   },
   set(target: any[], p: PropertyKey, value: any, receiver: any): boolean {
-    console.log('set', {target, p, value});
-    return Reflect.set(target, p, value, receiver)
+    console.log('set', { target, p, value });
+    return Reflect.set(target, p, value, receiver);
   },
   apply(target: any[], thisArg: any, argArray?: any): any {
-    console.log('apply', {target, thisArg, argArray});
+    console.log('apply', { target, thisArg, argArray });
     return Reflect.apply(target as any, thisArg, argArray);
-  }
+  },
 });
 global['xs'] = xs;
 
