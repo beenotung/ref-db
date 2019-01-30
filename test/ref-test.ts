@@ -31,8 +31,9 @@ function test(s) {
 global['graph'] = graph;
 
 test('graph');
-test('graph.posts["post-1"]');
-test('graph.posts["post-1"].author.name');
+test('graph.posts["post-1"]');              // { id: 'user-1', author: { '$ref': 'users', id: 'user-1' } }
+test('graph.posts["post-1"].author');       // { id: 'user-1', name: 'Alice' }
+test('graph.posts["post-1"].author.name');  // 'Alice'
 
 test('graph.users.length');
 test('graph.users.push({id:"user-3",name:"Carol"})');
