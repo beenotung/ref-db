@@ -1,6 +1,5 @@
 import { proxyCollections, Record, Ref } from '../src/ref';
-import { inspect, format } from 'util';
-import { format_datetime } from '@beenotung/tslib';
+import { inspect } from 'util';
 
 interface User extends Record {
   name: string;

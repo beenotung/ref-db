@@ -43,7 +43,7 @@
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "@beenotung/tslib": "^13.3.2"
+    "@beenotung/tslib": "^13.4.0"
   },
   "repository": {
     "type": "git",
