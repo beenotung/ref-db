@@ -1,8 +1,8 @@
-import { getStoreCollectionKeys, proxyStoreCollections } from '../src/ref-db';
+import { getStoreCollectionKeys, proxyStoreCollections, proxyStoreCollectionsByPath } from '../src/ref-db';
 import { inspect } from 'util';
 
 let collectionNames = ['users', 'posts'];
-let db = proxyStoreCollections(
+let db = proxyStoreCollectionsByPath(
   'data',
   Number.MAX_SAFE_INTEGER,
   Number.MAX_SAFE_INTEGER,
