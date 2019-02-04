@@ -10,8 +10,9 @@ export interface Record {
   id: string;
 }
 
-export type Collection<T extends Record> = T[] | { [id: string]: T };
-export interface Collections<T extends Record> {
+export type Collection<T extends Record = any> = T[] | { [id: string]: T };
+
+export interface Collections<T extends Record = any> {
   [name: string]: Collection<T>;
 }
 
