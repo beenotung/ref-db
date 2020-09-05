@@ -1,6 +1,6 @@
 {
   "name": "ref-db",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "auto populated collection backed by cross-platform Storage",
   "keywords": [
     "Proxy",
