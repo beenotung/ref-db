@@ -4,8 +4,14 @@
 access object with
 transparent reference to synchronous db operation (not async operation)
 
+## Supported Platforms
+
+ref-db is built on top of cross-platform Storage, hence it works on:
+- Browser (using [window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage))
+- Node.js (using [node-localstorage](https://www.npmjs.com/package/node-localstorage))
+
 ## How it works?
-The loaded data object is proxied, it saves and loads data from the database automatically. Just use it as if they're all in-memory.
+The loaded data object is proxied, it saves and loads data from the storage automatically. You can just use it as if they're all in-memory.
 
 ## Usage
 
