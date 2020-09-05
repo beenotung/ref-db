@@ -1,13 +1,13 @@
-import { getStoreCollectionKeys, proxyStoreCollections, proxyStoreCollectionsByPath } from '../src/ref-db';
+import { proxyStoreCollectionsByPath } from '../src/ref-db';
 import { inspect } from 'util';
 
 let collectionNames = ['users', 'posts'];
-let db = proxyStoreCollectionsByPath(
-  'data',
-  Number.MAX_SAFE_INTEGER,
-  Number.MAX_SAFE_INTEGER,
-  collectionNames,
-);
+let db = proxyStoreCollectionsByPath({
+  path: 'data',
+  storeQuota: Number.MAX_SAFE_INTEGER, // optional
+  cacheSize: Number.MAX_SAFE_INTEGER, // optional
+  whitelistCollectionNames: collectionNames, // optional
+});
 
 function test(s: string) {
   process.stdout.write(s);

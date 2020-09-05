@@ -286,7 +286,8 @@ const proxyString = '[object Proxy]';
 export function proxyStoreCollections<
   T extends Record,
   name extends string = string
->(store: Store, whitelistCollectionNames?: name[]) {
+>(options: { store: Store; whitelistCollectionNames?: name[] }) {
+  const { store, whitelistCollectionNames } = options;
   let collections: StoreCollections<T> = Object.assign(
     {} as { [name: string]: StoreCollection<T> },
     { [Symbol.store]: store },
@@ -319,12 +320,16 @@ export function proxyStoreCollections<
 export function proxyStoreCollectionsByPath<
   T extends Record,
   name extends string = string
->(
-  dirpath: string,
-  storeQuota: number = Number.MAX_SAFE_INTEGER,
-  cacheSize: number = Number.MAX_SAFE_INTEGER,
-  whitelistCollectionNames?: name[],
-) {
-  const store = CachedObjectStore.create(dirpath, cacheSize, storeQuota);
-  return proxyStoreCollections(store, whitelistCollectionNames);
+>(options: {
+  path: string;
+  storeQuota?: number; // default is Number.MAX_SAFE_INTEGER,
+  cacheSize?: number; // default is Number.MAX_SAFE_INTEGER,
+  whitelistCollectionNames?: name[];
+}) {
+  const store = CachedObjectStore.create(
+    options.path,
+    options.cacheSize,
+    options.storeQuota,
+  );
+  return proxyStoreCollections({ ...options, store });
 }
