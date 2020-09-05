@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ref-db": "0.0.1"
+    "@beenotung/tslib": "^16.35.0",
+    "node-localstorage": "^2.1.6",
+    "ref-db": "file:.."
+  },
+  "devDependencies": {
+    "@types/node-localstorage": "^1.3.0"
   }
 }
