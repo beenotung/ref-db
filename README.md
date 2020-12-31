@@ -92,3 +92,6 @@ undefined
 > db.posts["post-1"].author.name
 'Alice'
 ```
+
+## License
+[BSD-2-Clause](./LICENSE) (Free Open Sourced Project)
