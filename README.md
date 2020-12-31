@@ -81,7 +81,7 @@ undefined
 { id: 'user-1', name: 'Alice' }
 
 > db.posts["post-1"] = { id: "post-1", author: { $ref: "users", id: "user-1" } }
-{ id: 'post-1', author: { '$ref': 'users', > id: 'user-1' } }
+{ id: 'post-1', author: { '$ref': 'users', id: 'user-1' } }
 
 > db.posts["post-1"]
 { id: 'post-1', author: { '$ref': 'users', id: 'user-1' } }
