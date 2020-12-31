@@ -30,11 +30,6 @@
     "rawtest": "ts-node test/index.ts",
     "prepublishOnly": "npm run rawtest && npm run build"
   },
-  "husky": {
-    "hook": {
-      "pre-commit": "npm run format"
-    }
-  },
   "devDependencies": {
     "@beenotung/gen-index": "^1.0.7",
     "@types/node": "^8.10.39",
@@ -47,6 +42,11 @@
   },
   "dependencies": {
     "@beenotung/tslib": "^13.5.1"
+  },
+  "husky": {
+    "hook": {
+      "pre-commit": "npm run format"
+    }
   },
   "repository": {
     "type": "git",
